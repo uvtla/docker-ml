@@ -1,0 +1,12 @@
+sudo docker cp /path/to/host/directory container_id:/path/inside/container 
+sudo docker ps 
+sudo docker exec -it contai_id bash
+sudo docker run 
+docker rename 0a42a1ee36ed ml_docker
+docker commit ml_docker teste
+
+ docker run -it teste
+https://geekflare.com/fr/docker-commands/
+
+
+docker commit  -c "CMD python /Ml_docker/MIM.py"  ml_docker meriam
