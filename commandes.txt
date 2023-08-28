@@ -10,7 +10,6 @@ docker build, docker attach, docker copy
 docker inspect
 port mapping, data and meta data layers, image vs container, entrypoint vs cmd
 
-docker run --link image_recognition:image_recognition -p 8080:80 -d frontend
 
 sudo docker cp /path/to/host/directory container_id:/path/inside/container 
 sudo docker ps 
@@ -24,3 +23,14 @@ https://geekflare.com/fr/docker-commands/
 
 
 docker commit  -c "CMD python /Ml_docker/MIM.py"  ml_docker meriam
+
+
+
+cd "nom du dossier git (ex. Ml_docker)"
+docker build -t backend .
+cd frontend
+docker build -t frontend .
+# start backend
+docker run -d --name image_recognition backend
+docker run --link image_recognition:image_recognition -p 8080:80 -d frontend
+
