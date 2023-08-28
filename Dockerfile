@@ -7,7 +7,7 @@ RUN pip install tensorflow-hub flask
 # copy the file content  github copilot
 COPY model ./model
 #Look above 
-COPY labels.txt main.py teste.jpg ./
+COPY labels.txt main.py ./
 
 # les ports suivants sont accessible  par la hôte
 EXPOSE 5000

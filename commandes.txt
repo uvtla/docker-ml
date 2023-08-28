@@ -1,3 +1,15 @@
+docker pull
+docker run -it -d (-p host-port:container-port)* <image-id> cmd
+docker commit
+docker images
+docker ps -a
+docker rename <container-id>
+docker tag <image-id>
+docker start, stop, exec, rm, rmi, kill
+docker build, docker attach, docker copy
+docker inspect
+port mapping, data and meta data layers, image vs container, entrypoint vs cmd
+
 sudo docker cp /path/to/host/directory container_id:/path/inside/container 
 sudo docker ps 
 sudo docker exec -it contai_id bash

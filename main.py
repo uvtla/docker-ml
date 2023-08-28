@@ -31,11 +31,10 @@ def predict(raw_image):
  
  # Create Flask app
 app = Flask(__name__)
-@app.route('/test', methods=['GET'])
-def test():
-  return jsonify({'ok': True})
+
 @app.route('/predict',methods=['POST'])
 def run_predict():
     raw_image_data = request.data
     return jsonify({'prediction': predict(raw_image_data)})
+
 app.run(host='0.0.0.0', debug=True)
