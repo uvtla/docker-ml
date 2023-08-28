@@ -10,6 +10,8 @@ docker build, docker attach, docker copy
 docker inspect
 port mapping, data and meta data layers, image vs container, entrypoint vs cmd
 
+docker run --link image_recognition:image_recognition -p 8080:80 -d frontend
+
 sudo docker cp /path/to/host/directory container_id:/path/inside/container 
 sudo docker ps 
 sudo docker exec -it contai_id bash
