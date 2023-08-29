@@ -9,7 +9,8 @@ COPY model ./model
 #Look above 
 COPY labels.txt main.py ./
 
-# les ports suivants sont accessible  par la hôte
+# cette instruction s'agit d'une simple documentation a propos quels 
+# ports sont utilisés par le conteneur
 EXPOSE 5000
 #default command executed when running the container 
 CMD python main.py

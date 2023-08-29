@@ -1,0 +1,15 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8080:80"  # Map frontend's port 80 to host's port 80
+    depends_on:
+      - image_recognition
+
+  image_recognition:
+    build:
+      context: .
+    volumes:
+      - ./shared:/app/shared:ro

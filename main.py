@@ -37,4 +37,10 @@ def run_predict():
     raw_image_data = request.data
     return jsonify({'prediction': predict(raw_image_data)})
 
+
+@app.route('/predict',methods=['GET'])
+def run_predict2():
+    raw_image_data = tf.io.read_file('shared/test.jpg')
+    return jsonify({'prediction': predict(raw_image_data)})
+
 app.run(host='0.0.0.0', debug=True)
