@@ -19,12 +19,12 @@ jobs:
 
     - name: Check running containers
       run: |
-        if ! docker ps --format '{{.Names}}' | grep -q '^frontend$'; then
+        if ! docker ps --format '{{.Names}}' | grep -q 'frontend'; then
           echo "Container 'frontend' is not running!"
           exit 1
         fi
 
-        if ! docker ps --format '{{.Names}}' | grep -q '^image_recognition$'; then
+        if ! docker ps --format '{{.Names}}' | grep -q 'image_recognition'; then
           echo "Container 'image_recognition' is not running!"
           exit 1
         fi

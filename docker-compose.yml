@@ -9,7 +9,6 @@ services:
       - image_recognition
 
   image_recognition:
-    container_name: image_recognition
     build:
       context: .
     volumes:
