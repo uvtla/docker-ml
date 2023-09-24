@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  build-and-run:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -30,6 +30,9 @@ jobs:
         fi
 
         echo "Both 'frontend' and 'image_recognition' containers are running."
+
+    - name: Test some picture
+      run: python test.py
 
     - name: Cleanup
       if: always()
