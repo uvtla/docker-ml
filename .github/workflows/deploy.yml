@@ -1,0 +1,25 @@
+name: Docker Compose CD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build and run with Docker Compose
+      run: |
+        docker-compose build
+    
+    - name: Login Docker
+      run: docker login $DOCKER_LOGIN $DOCKER_PASSWORD
+
+    - name: Publish docker 
+      run: |
+        docker push frontend
+        docker push image_recognition
